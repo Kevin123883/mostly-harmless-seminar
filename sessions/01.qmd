@@ -1,0 +1,28 @@
+---
+title: "Session 1: A Course Correction in the History of Econometrics"
+description: "The econometric workflow; treatment effects and binary choice; reduced form vs. structural; fixed vs. random design."
+# date: 2026-10-01
+---
+
+**When:** TBA · **Where:** TBA
+
+## Materials
+
+- [Slides (PDF)](../slides/session1.pdf)
+- Recording: to be posted after the session
+
+## Overview
+
+- Why econometrics starts from a question, not an estimator
+- Example I, vaccination and the ATE: specification, interference, identification by randomization
+- Example II, binary choice: random utility, indifference, identification vs. optimizer convergence
+- What "reduced form" means, and how to tell structural from reduced-form work in practice
+- Fixed vs. random design: where the randomness comes from
+
+## Readings
+
+- Angrist and Pischke (2009), Chapters 1–2.
+- Heckman, J. J. (2010). "Building Bridges between Structural and Program Evaluation
+  Approaches to Evaluating Policy." *Journal of Economic Literature*, 48(2), 356–398.
+- Low, H., and C. Meghir (2017). "The Use of Structural Models in Econometrics."
+  *Journal of Economic Perspectives*, 31(2), 33–58.

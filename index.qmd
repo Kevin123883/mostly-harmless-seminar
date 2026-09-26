@@ -1,0 +1,47 @@
+---
+title: "Mostly Harmless Econometrics"
+subtitle: "A reading group on applied econometrics"
+toc: false
+---
+
+## About
+
+This reading group works through *Mostly Harmless Econometrics*
+(Angrist and Pischke, 2009) and related readings, organized around one idea:
+
+> An estimator is not a research design.
+
+Every session follows the same sequence of questions:
+
+**Question → Specification & Estimand → Identification → Estimation → Inference**
+
+The methods change from session to session. The sequence of questions does not.
+
+## Logistics
+
+|               |            |
+|---------------|------------|
+| **When**      | TBA        |
+| **Where**     | TBA        |
+| **Organizer** | Kaiwen Luo |
+
+## Tentative topics
+
+1. A course correction in the history of econometrics
+2. Regression and selection on observables
+3. Instrumental variables and LATE
+4. Difference-in-differences
+5. Regression discontinuity
+6. Panel data
+7. Treatment-effect heterogeneity
+8. Structural models and policy counterfactuals
+
+Slides, readings, and recordings for each meeting are on the [Sessions](sessions.qmd) page.
+
+## Core readings
+
+- Angrist, J. D., and J.-S. Pischke (2009).
+  *Mostly Harmless Econometrics: An Empiricist's Companion*. Princeton University Press.
+- Lewbel, A. (2019). "The Identification Zoo: Meanings of Identification in Econometrics."
+  *Journal of Economic Literature*, 57(4), 835–903.
+  [doi:10.1257/jel.20181361](https://doi.org/10.1257/jel.20181361)

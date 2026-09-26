@@ -1,0 +1,32 @@
+project:
+  type: website
+  render:
+    - "*.qmd"
+    - "sessions/*.qmd"
+  resources:
+    - "slides/*"
+
+website:
+  title: "Mostly Harmless Econometrics"
+  description: "A reading group on applied econometrics at Washington University in St. Louis."
+  site-url: "https://kevin123883.github.io/mostly-harmless-seminar/"
+  repo-url: "https://github.com/Kevin123883/mostly-harmless-seminar"
+  navbar:
+    left:
+      - text: Home
+        href: index.qmd
+      - text: Sessions
+        href: sessions.qmd
+    right:
+      - icon: github
+        href: "https://github.com/Kevin123883/Mostly-Harmless"
+        aria-label: "Slides source on GitHub"
+  page-footer:
+    left: "Mostly Harmless Econometrics · Washington University in St. Louis"
+    right: "Built with [Quarto](https://quarto.org)"
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    lang: en

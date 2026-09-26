@@ -1,0 +1,6 @@
+/.quarto/
+/_site/
+/slides/
+/slides-src/
+
+**/*.quarto_ipynb

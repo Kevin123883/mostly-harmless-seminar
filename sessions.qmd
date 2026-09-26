@@ -1,0 +1,19 @@
+---
+title: "Sessions"
+toc: false
+listing:
+  contents: "sessions/*.qmd"
+  type: table
+  sort: "filename"
+  fields: [title, date, description]
+  field-display-names:
+    title: "Session"
+    date: "Date"
+    description: "Topics"
+  sort-ui: false
+  filter-ui: false
+---
+
+Slides are compiled automatically from the
+[LaTeX source](https://github.com/Kevin123883/Mostly-Harmless).
+Recordings are posted on each session page when available.

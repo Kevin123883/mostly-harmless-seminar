@@ -1,0 +1,84 @@
+name: Build and deploy site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  # Slides are pushed from Overleaf to a separate repo, so poll it hourly.
+  # The check job skips the build when the slides have not changed.
+  schedule:
+    - cron: "17 * * * *"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+env:
+  SLIDES_REPO: Kevin123883/Mostly-Harmless
+  SITE_URL: https://kevin123883.github.io/mostly-harmless-seminar
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      build: ${{ steps.compare.outputs.build }}
+    steps:
+      - id: compare
+        run: |
+          latest=$(git ls-remote "https://github.com/$SLIDES_REPO" HEAD | cut -f1)
+          deployed=$(curl -fsSL "$SITE_URL/slides/version.txt" || true)
+          echo "slides latest=$latest deployed=$deployed"
+          if [ "${{ github.event_name }}" != "schedule" ] || [ "$latest" != "$deployed" ]; then
+            echo "build=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "build=false" >> "$GITHUB_OUTPUT"
+          fi
+
+  build:
+    needs: check
+    if: needs.check.outputs.build == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Check out slides
+        uses: actions/checkout@v7
+        with:
+          repository: ${{ env.SLIDES_REPO }}
+          path: slides-src
+
+      - name: Compile slides
+        uses: xu-cheng/latex-action@v4
+        with:
+          working_directory: slides-src
+          root_file: session*.tex
+
+      - name: Collect PDFs
+        run: |
+          mkdir -p slides
+          cp slides-src/session*.pdf slides/
+          git -C slides-src rev-parse HEAD > slides/version.txt
+          ls -l slides
+
+      - uses: quarto-dev/quarto-actions/setup@v2
+
+      - run: quarto render
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5
