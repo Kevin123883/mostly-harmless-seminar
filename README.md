@@ -11,13 +11,15 @@ Built with [Quarto](https://quarto.org) and deployed to GitHub Pages by
 Overleaf ──(Menu → GitHub → Push)──▶ Kevin123883/Mostly-Harmless   (slides, LaTeX)
                                               │
                                               ▼  hourly check, or on push here
-                              this repo: compile session*.tex → render site → Pages
+                              this repo: compile session*/session*.tex → render site → Pages
 ```
 
 - **Slides** live in Overleaf and are pushed to
   [Kevin123883/Mostly-Harmless](https://github.com/Kevin123883/Mostly-Harmless).
-  Every `session*.tex` in that repo is compiled to `slides/session*.pdf` on the site.
-  Other `.tex` files are ignored.
+  Each session has its own folder there (`session1/`, `session2/`, ...). Every
+  `session*/session*.tex` is compiled to `slides/session*.pdf` on the site, so a
+  recitation deck `session1/session1-1.tex` becomes `slides/session1-1.pdf`.
+  Other `.tex` files (e.g. in `drafts/`) are ignored.
 - **Site content** (group info, session pages) lives in this repo.
 
 ## Common tasks
@@ -31,8 +33,8 @@ gh workflow run publish.yml -R Kevin123883/mostly-harmless-seminar
 ```
 
 **Add a session.** Copy `session-template.md` to `sessions/02.qmd` (keep the
-two-digit number so sessions sort correctly), fill it in, and push. Name the slides
-`session2.tex` in Overleaf so the link `../slides/session2.pdf` resolves.
+two-digit number so sessions sort correctly), fill it in, and push. Put the slides at
+`session2/session2.tex` in Overleaf so the link `../slides/session2.pdf` resolves.
 
 **Post a recording.** Do not commit video files. Upload the recording to YouTube
 (unlisted), Zoom cloud, Box, or Panopto, then either link it in the session page:
