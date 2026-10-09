@@ -9,6 +9,7 @@ description: "The econometric workflow; treatment effects and binary choice; red
 ## Materials
 
 - [Slides (PDF)](../slides/session1.pdf)
+- [Recitation 1.1 slides (PDF)](../slides/session1-1.pdf): endogenous regressors in binary choice and the Heckman selection model
 - Recording: to be posted after the session
 
 ## Overview

@@ -56,12 +56,14 @@ jobs:
         uses: xu-cheng/latex-action@v4
         with:
           working_directory: slides-src
-          root_file: session*.tex
+          # One folder per session: session1/session1.tex, session1/session1-1.tex, ...
+          root_file: session*/session*.tex
+          work_in_root_file_dir: true
 
       - name: Collect PDFs
         run: |
           mkdir -p slides
-          cp slides-src/session*.pdf slides/
+          cp slides-src/session*/session*.pdf slides/
           git -C slides-src rev-parse HEAD > slides/version.txt
           ls -l slides
 

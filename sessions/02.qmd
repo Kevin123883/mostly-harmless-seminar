@@ -1,0 +1,30 @@
+---
+title: "Session 2: What Does OLS Estimate?"
+description: "Linear projection; OLS as weighted contrasts and weighted causal effects; binary, ordered, and continuous treatments; choosing the estimand first."
+# date: 2026-10-08
+---
+
+**When:** TBA · **Where:** TBA
+
+## Materials
+
+- [Slides (PDF)](../slides/session2.pdf)
+- Recording: to be posted after the session
+
+## Overview
+
+- Starting point with no causal assumptions: OLS as a linear projection
+- Binary treatment: when OLS recovers the ATE, and the weights it puts on effects once covariates enter
+- Ordered discrete and continuous treatments: OLS as a weighted average of slopes
+- Where the clean results stop: unordered treatments and additive OLS reweighting effects
+- From "regression first" to "estimand first": the average linear regression function and average derivative effects
+
+## Readings
+
+- Angrist and Pischke (2009), Chapter 3.
+- Słoczyński, T. (2022). "Interpreting OLS Estimands When Treatment Effects Are Heterogeneous:
+  Smaller Groups Get Larger Weights." *Review of Economics and Statistics*, 104(3), 501–509.
+- Yitzhaki, S. (1996). "On Using Linear Regressions in Welfare Economics."
+  *Journal of Business & Economic Statistics*, 14(4), 478–486.
+- Graham, B. S., and C. C. de Xavier Pinto (2022). "Semiparametrically Efficient Estimation
+  of the Average Linear Regression Function." *Journal of Econometrics*, 226(1), 115–138.
